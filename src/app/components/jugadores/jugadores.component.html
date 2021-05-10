@@ -1,0 +1,27 @@
+<div class="jumbotron text-center">
+    <h1 class="fw-bolder text-success">Jugadores destacados en la temporada 2020/2021</h1>
+</div>
+<div class="jumbotronBottom">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let jugador of jugadores; let i=index">
+            <div class="card border border-5 border-danger">
+                <img src="{{jugador.imagen | pipeEnlaces}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="info">
+                        <h5 class="card-title">{{jugador.nombre}}</h5>
+                        <p class="card-text"><b>Equipo:</b> {{jugador.equipo}}</p>
+                        <p class="card-text"><b>Edad:</b>  {{jugador.edad}}</p>
+                        <p class="card-text"><b>Numero de jersey:</b> {{jugador.numero}}</p>
+                        <div *ngIf="est[i]" class="my-2">
+                            <p class="card-text"><b>Goles:</b> {{jugador.goles}}</p>
+                            <p class="card-text"><b>Partidos jugados:</b> {{jugador.partidos}}</p>
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-success" (click)="showEst(i)">Estadísticas</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

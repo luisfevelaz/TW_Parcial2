@@ -1,0 +1,70 @@
+<div class="jumbotron text-center">
+    <h1>Información sobre algunos equipos de la liga</h1>
+</div>
+<div class="jumbotron">
+   <p class="h4">Busca uno de tus equipos favoritos: </p>
+   <input type="text" class="form-control" [(ngModel)]="busqueda">
+   <button class="btn btn-outline-success mt-2" (click)="Buscar()">Buscar</button>
+</div>
+<div class="jumbotronBottom">
+    <div class="text-center">
+        <h3>Resultados sobre: {{busqueda}}</h3>
+    </div>
+    <div *ngIf="chivas">
+        <div class="row">
+            <img src="https://s3.amazonaws.com/lmxwebsite/docs/archdgtl/AfldDrct/logos/7/7.png" class="w-md-50 col-sm-6 col-md-4">
+            <div class="p-5 col-sm-6 col-md-4">
+                <h4>Fundacion: </h4>
+                <p class="h5">1906 en Guadalajara,Jalisco</p>
+                <h4>Titulos: </h4>
+                <p class="h5">12</p>
+                <h4>Goleador: </h4>
+                <p class="h5">J.J. Macías</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="ame">
+        <div class="row">
+            <img src="https://s3.amazonaws.com/lmxwebsite/docs/archdgtl/AfldDrct/logos/1/1.png" class="w-md-50 col-sm-6 col-md-4">
+            <div class="p-5 col-sm-6 col-md-4">
+                <h4>Fundacion: </h4>
+                <p class="h5">1916 en la CDMX</p>
+                <h4>Titulos: </h4>
+                <p class="h5">13</p>
+                <h4>Goleador: </h4>
+                <p class="h5">Henry Martin</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="azul">
+        <div class="row">
+            <img src="https://s3.amazonaws.com/lmxwebsite/docs/archdgtl/AfldDrct/logos/6/6.png" class="w-md-50 col-sm-6 col-md-4">
+            <div class="p-5 col-sm-6 col-md-4">
+                <h4>Fundacion: </h4>
+                <p class="h5">1927 en el estado de Hidalgo</p>
+                <h4>Titulos: </h4>
+                <p class="h5">9</p>
+                <h4>Goleador: </h4>
+                <p class="h5">Jonathan Rodríguez</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="pumas">
+        <div class="row">
+            <img src="https://s3.amazonaws.com/lmxwebsite/docs/archdgtl/AfldDrct/logos/18/18.png" class="w-md-50 col-sm-6 col-md-4">
+            <div class="p-5 col-sm-6 col-md-4">
+                <h4>Fundacion: </h4>
+                <p class="h5">1954 en la CDMX</p>
+                <h4>Titulos: </h4>
+                <p class="h5">7</p>
+                <h4>Goleador: </h4>
+                <p class="h5">Juan Dineno</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="ninguno">
+        <div class="text-center p-5">
+            <p class="h2 text-danger">No hay resultados que coincidan con tu búsqueda <i class="far fa-frown-open"></i></p>
+        </div>
+    </div>
+</div>

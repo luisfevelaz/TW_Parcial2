@@ -1,0 +1,82 @@
+<div class="jumbotron text-center">
+    <!-- Binding 1 direccion -->
+    <small class="fw-bolder text-success">Fecha: {{date}}</small> 
+    <h1 class="text-center">Todo lo que debes saber de la </h1>
+    <img src="https://s3.amazonaws.com/lmxwebsite/images/logosDivision/guardianes/logo_liga_mx.png?rnd=6012021" alt="" class="my-2">
+</div>
+<div class="jumbotron">
+    <div class="row p-4">
+        <div class="col-sm-6 col-md-4">
+            <h3 class="mx-2 text-success">General</h3>
+            <p class="mx-2 h4">El primer torneo de liga mexicana se remonta al año de 1943 y desde entonces la pasión de los aficionados sólo aumenta más y más</p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <img src="https://images.mediotiempo.com/BUuAgU4nXR_cGJ2VyoFd5alBmQ8=/958x596/uploads/media/2019/06/12/empezo-historia-profesional-futbol-mexicano.jpg" class="w-100">
+        </div>
+    </div>
+    <div class="row p-4">
+        <div class="col-sm-6 col-md-4">
+            <h3 class="mx-2 text-success">Sistema de competencia</h3>
+            <ul class="mx-2">
+                <li>El torneo lo conformal 18 equipos que se enfrntan entre ellos por 17 jornadas.</li>
+                <li>Los 4 primeros lugares avanzan directamente a cuartos de final.</li>
+                <li>Los equipos del 6 al 12 se enfrentan en un repechaje de los cuales quedan 4 para conformar los 8 equipos en cuartos de final.</li>
+                <li>Cuartos de final, semifinal y final se juegan en partidos de ida y vuelta para conocer al campeón</li>
+            </ul>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <img src="https://images.mediotiempo.com/1KgUP4R-HLOTXHOT0loQVBSp_Wo=/958x596/uploads/media/2020/12/13/leon-consagro-temporada-titulo-liga.jpg" class="w-100">
+        </div>
+    </div>
+</div>
+<div class="jumbotronBottom">
+    <h4>¿Quieres ser miembro?</h4>
+    <button class="btn btn-outline-danger my-3" (click)="showForm()">Contestar formulario</button>
+    <div *ngIf="formulario">
+        <p class="h5">Llena los siguientes datos y te llegará mensualmente el reporte de resultados de cada jornada de la liga, adempás de beneficios extra</p>
+        <form class="jumbotron" [formGroup]="formMiembro">
+            <label for="nombre" class="form-label">Nombre: </label>
+            <input type="text" placeholder="Nombre" class="form-control" id="nombre" formControlName="newName">
+            <small class="text-danger d-block" *ngIf="isValidField('newName')">
+                Campo vacío o inválido
+            </small>
+
+            <label for="apellido" class="form-label">Apellido: </label>
+            <input type="text" placeholder="Apellido" class="form-control" id="apellido" formControlName="lastName">
+            <small class="text-danger d-block" *ngIf="isValidField('lastName')">
+                Campo vacío o inválido
+            </small>
+
+            <label for="mail" class="form-label">Email: </label>
+            <input type="mail" placeholder="Email" class="form-control" id="mail" formControlName="email">
+            <small class="text-danger d-block" *ngIf="isValidField('email')">
+                Campo vacío o inválido
+            </small>
+
+            <label for="equipo" class="form-label">Equipo: </label>
+            <select name="equipo" id="equipo" class="form-control">
+                <option value="America">America</option>
+                <option value="Chivas">Chivas</option>
+                <option value="Pumas">Pumas</option>
+                <option value="Cruz Azul">Cruz Azul</option>
+                <option value="Necaxa">Necaxa</option>
+                <option value="Juarez">Juarez</option>
+                <option value="Monterrey">Monterrey</option>
+                <option value="Tigres">Tigres</option>
+                <option value="Toluca">Toluca</option>
+                <option value="Santos">Santos</option>
+                <option value="Tijuana">Tijuana</option>
+                <option value="Pachuca">Pachuca</option>
+                <option value="San Luis">San Luis</option>
+                <option value="Atlas">Atlas</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Queretaro">Queretaro</option>
+                <option value="Mazatlan">Mazatlan</option>
+                <option value="Leon">Leon</option>
+            </select>
+        </form>
+        <div class="text-center">
+            <button class="btn btn-success">Confirmar y enviar datos</button>
+        </div>
+    </div>
+</div>
